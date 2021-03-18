@@ -6,4 +6,11 @@
         language: python
         stages: [commit, push]
         always_run: true
+    -   id: hook2
+        name: hook2
+        entry: inst/hook2
+        language: script
+        stages: [commit, push]
+        always_run: true
+
 # stuff more. check if python works with local paths
