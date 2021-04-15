@@ -1,16 +1,9 @@
--   repo: local
+repos:
+-   repo: https://github.com/lorenzwalthert/precommit
+    rev: acc8657498d5bfb9e9891098ba00b36e82c7ebd6
     hooks:
-    -   id: hook1
-        name: hook1
-        entry: python inst/hook1
-        language: python
-        stages: [commit, push]
-        always_run: true
-    -   id: hook2
-        name: hook2
-        entry: inst/hook2
-        language: script
-        stages: [commit, push]
-        always_run: true
-
-# stuff more. check if python works with local paths.
+    -   id: style-files
+        args: [--style_pkg=styler, --style_fun=tidyverse_style]
+        exclude: 'tests/testthat/.*/.*\.R'
+        additional_dependencies:
+        - r-lib/styler
