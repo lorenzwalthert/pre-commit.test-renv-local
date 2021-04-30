@@ -14,3 +14,9 @@ repos:
         always_run: true
         additional_dependencies:
         - here
+    -   id: python-local
+        name: Python local
+        entry: python inst/hook1
+        stages: [commit]
+        language: python
+        always_run: true
